@@ -25,6 +25,9 @@ CheckpointConfig:
   S3Uri: ''
   LocalPath: ''
 Tags: []
+TensorBoardOutputConfig:
+  LocalPath: ''
+  S3OutputPath: ''
 EnableNetworkIsolation: True
 EnableInterContainerTrafficEncryption: False
 EnableManagedSpotTraining: False
