@@ -80,7 +80,7 @@ outputs:
 implementation:
   container:
     image: cdavies981/kf-worker:latest
-    command: ['python']
+    command: ['python3']
     args: [
       train.py,
       --region, {inputValue: region},
