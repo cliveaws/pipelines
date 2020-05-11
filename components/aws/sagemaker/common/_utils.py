@@ -171,6 +171,16 @@ def create_training_job_request(args):
     for key, val in args['tags'].items():
         request['Tags'].append({'Key': key, 'Value': val})
 
+    ### Update TensorBoardOuputConfig
+    if args['tensorboard_local_path']:
+        if args['tensorboard_S3_path']:
+            request['TensorBoardOutputConfig']['LocalPath'] = args ['tensorboard_local_path']
+        else:
+            logging.error('Tensorboard config must include S3 path')
+            raise Exception('Could not create job request')
+    if args['tensorboard_S3_path']:
+        request['TensorBoardOutputConfig']['S3OutputPath'] = args ['tensorboard_S3_path']
+
     return request
 
 

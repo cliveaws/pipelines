@@ -41,6 +41,10 @@ def create_parser():
   parser.add_argument('--network_isolation', type=_utils.str_to_bool, required=False, help='Isolates the training container.', default=True)
   parser.add_argument('--traffic_encryption', type=_utils.str_to_bool, required=False, help='Encrypts all communications between ML compute instances in distributed training.', default=False)
 
+  parser.add_argument('--tensorboard_s3_path', type=str.strip, required=False, help='S3 location for tensorboard output', default=False)
+  parser.add_argument('--tensorboard_local_path', type=str.strip, required=False, help='Local path for tensorboard output (optional)', default=False)
+
+
   ### Start spot instance support
   parser.add_argument('--spot_instance', type=_utils.str_to_bool, required=False, help='Use managed spot training.', default=False)
   parser.add_argument('--max_wait_time', type=_utils.str_to_int, required=False, help='The maximum time in seconds you are willing to wait for a managed spot training job to complete.', default=86400)
