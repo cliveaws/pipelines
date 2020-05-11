@@ -75,7 +75,7 @@ inputs:
     default: '{}'
   - name: tensorboard_output_config
     description: 'Select output path for tensorbord data'
-    default': '{}'
+    default: '{}'
 outputs:
   - {name: model_artifact_url,    description: 'Model artifacts url'}
   - {name: job_name,              description: 'Training job name'}
