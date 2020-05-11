@@ -73,6 +73,9 @@ inputs:
   - name: tags
     description: 'Key-value pairs, to categorize AWS resources.'
     default: '{}'
+  - name: tensorboard_output_config
+    description: 'Select output path for tensorbord data'
+    default': '{}'
 outputs:
   - {name: model_artifact_url,    description: 'Model artifacts url'}
   - {name: job_name,              description: 'Training job name'}
@@ -107,6 +110,7 @@ implementation:
       --spot_instance, {inputValue: spot_instance},
       --max_wait_time, {inputValue: max_wait_time},
       --checkpoint_config, {inputValue: checkpoint_config},
+      --tensorboard_output_config, {inputValue: tensorboard_output_config},
       --tags, {inputValue: tags}
     ]
     fileOutputs:
